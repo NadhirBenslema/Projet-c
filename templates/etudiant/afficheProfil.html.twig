@@ -1,0 +1,126 @@
+{% extends 'TemplateEtudiant.html.twig' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="hero-wrap js-fullheight">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center " data-scrollax-parent="true">
+                            <div class="row align-items-stretch no-gutters contact-wrap">
+                                <div class="col-md-12">
+                                    <div class="form h-100">
+                                        {% for message in app.flashes('message') %}
+                                            <div class="alert alert-success" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                        {% for message in app.flashes('warning') %}
+                                            <div class="alert alert-warning" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                        {% for message in app.flashes('danger') %}
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                        {% for flashError in app.flashes('verify_email_error') %}
+                                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                                        {% endfor %}
+                                        
+                                                <div class="col-lg-8 col-md-8 d-flex justify-content-center">
+                                                    <p><b> Bienvenue  {{ app.user.nom }} {{ app.user.prenom }} </b></p>   
+                                                </div>   
+                                        
+                                                <div class="col-lg-8 col-md-8 d-flex justify-content-center">
+                                                    <p><b> Votre profil : </b></p>
+                                                </div>
+                                                
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                
+                                                
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="col">Nom</td> 
+                                                            <td>{{ app.user.nom }}</td>
+                                                            
+                                                        </tr>
+                                                
+                                                        <tr>
+                                                            <td scope="col">Prénom</td>
+                                                            <td>{{ app.user.prenom }}</td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Image</td>
+                                                            <td><img src="{{ asset('uploads/images/' ~app.user.image) }}" alt="" width="60px" height="60px"></td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Email</td>
+                                                            <td>{{ app.user.login }}</td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Age</td>
+                                                            <td>{{ app.user.age }}</td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Ville</td>
+                                                            <td>{{ app.user.ville }}</td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Tél</td>
+                                                            <td>{{ app.user.tel }}</td>
+                                                        
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td scope="col">Mot de passe</td>
+                                                            <td>{{ app.user.password }}</td>
+                                                        
+                                                        </tr>
+                                                    
+                                                    </tbody>
+                                                </table>
+
+
+
+
+
+                                            
+                                            <div class="d-flex justify-content-center p-1 m-1">
+
+                                                <div>
+                                                    <a href="{{ path('profile') }}" class="btn btn-info">Modifier</a>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <div class="p-3 m-3">
+                                                    <p style="color:black">Vous voulez quitter? <b><a style="color:black" href="{{ path('app_logout') }}" >Se déconnecter</a></b>
+                                                </div>
+
+                                            </div>
+
+                                        
+                                    </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

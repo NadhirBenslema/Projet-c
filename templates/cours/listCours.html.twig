@@ -1,0 +1,120 @@
+{% extends 'TemplateEtudiant.html.twig' %}
+{% block body %}
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+<h4 class="card-title"> <b> Vous trouverer ici les cours et les formations disponibles : </b></h4>
+    <div>
+
+    </div>
+    <div class="card-header">
+        <a class="btn btn-success" href="{{ path('app_addcours') }}">Add Cours</a>
+
+    </div>
+
+    <input type="text" id="search" class="form-control fas fa-search" placeholder="Search">
+
+<div class="table-responsive">
+    <table id="t" class="table table-striped">
+    <tr>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">ID</td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Titre</td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Description</td>
+        
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Filiere </td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Image </td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Nom Enseignant </td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Nbr_heures </td>
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Prix</td>
+       
+        <td class="sorting_asc" tabindex="0" scope="col" aria-controls="example2" rowspan="1" colspan="1">Action </td>
+    </tr>
+        <tbody id="all">
+    {% for i in cours %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.titre }}</td>
+            <td>{{ i.description}}</td>
+            
+            <td>{{ i.filiere }}</td>
+            <td><img src="{{ asset('uploads/images/' ~i.imagec) }}" alt="" width="400px" height="400px"></td>
+                
+            <td>{{ i.nomenseignant }}</td>
+            
+            <td>{{ i.nbrheures}}</td>
+            <td>{{ i.prix}}</td>  
+            <td><a href="/visualiser/{{ i.id }}" class="btn btn-warning">Visualiser</a>
+                    <a href="/delete/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de supprimer ?');">Delete</a></td> 
+        </tr>
+    {% endfor %}
+        </tbody>
+        
+        <tbody id="search">
+        </tbody>
+    </table>
+
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#search").keyup(function (e) {
+                /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                var value = $(this).val();
+                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                $.ajax({
+                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                    url: "{{ path('search_user') }}",
+                    /* La méthode utilisée pour transférer les données est GET */
+                    type: 'GET',
+                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                    data: {
+                        'searchValue': value
+                    },
+                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                    success: function (retour) {
+                        //console.log(retour);
+                        if (retour) {
+                            $('#t tbody#search').empty();
+                            $.each(JSON.parse(retour), function (i, obj) {
+                                $('#t tbody#all').hide();
+                                $('#t tbody#search').append(
+                                    ' <tr></td><td>    ' + obj.id + '' +
+                                    '  </td><td>' + obj.titre + '' +
+                                    '  </td><td>' + obj.description + '' +
+                                    
+                                    '  </td><td>' + obj.filiere + '' +
+                                    '  </td><td>' + obj.imagec + '' +
+                                    '  </td><td>' + obj.Nomenseignant + '' +
+                                    '  </td><td>' + obj.nbrheures + '' +
+                                    '  </td><td>' + obj.prix + '' +                                    
+                                    ' </td><td> '<a href="/visualiser/'+obj.id+'" class="btn btn-warning">Visualiser</a>' +
+                                    '<a href="/delete/'+obj.id+'" class="btn btn-danger" onclick="return confirm('+"Etes-vous sûr de supprimer ?"+');">Delete</a>' +
+                                    '  </td></tr>');
+                            });
+                            ///TapToTrip/Gestion/public/index.php
+                        } else {
+                            $('#t tbody#all').show();
+                            $('#t tbody#search').empty();
+                            $('#t tbody#search').fadeIn('fast');
+                        }
+                    },
+                });
+                return false;
+            });
+        }); 
+    </script>
+        {% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'TemplateEnseignant.html.twig' %}
+{% block body %}
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+   
+    {{ form_start(formcours,{'attr':{'novalidate': 'novalidate'}}) }}
+    <div class="card card-primary">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <div class="col-lg-6 col-md-8 p-1 m-1">
+                        {{ form_errors(formcours.titre)}}
+                        {{ form_widget(formcours.titre,{ 'attr': {'class': 'form-control', 'placeholder' : 'Titre'}}) }}
+                    </div>
+                    <div class="col-lg-6 col-md-8 p-1 m-1">
+                        {{ form_errors(formcours.description)}}
+                        {{ form_widget(formcours.description,{ 'attr': {'class': 'form-control', 'placeholder' : 'Description'}}) }}
+                    </div>
+                    
+
+                    <div class="col-lg-6 col-md-8 p-1 m-1" >
+                        {{ form_errors(formcours.filiere)}}
+                        {{ form_widget(formcours.filiere,{ 'attr': {'class': 'form-control', 'placeholder' : 'Filiere'}}) }}
+                    </div>
+
+                     <div class="col-lg-6 col-md-8 p-1 m-1" >
+                        {{ form_errors(formcours.imagec)}}
+                        {{ form_widget(formcours.imagec,{ 'attr': {'class': 'form-control', 'placeholder' : 'Image'}}) }}
+                    </div>
+
+                   
+
+                    <div class="col-lg-6 col-md-8 p-1 m-1">
+                        {{ form_errors(formcours.nomenseignant)}}
+                        {{ form_widget(formcours.nomenseignant,{ 'attr': {'class': 'form-control', 'placeholder' : 'Nom_enseignant'}}) }}
+                    </div>
+
+                    <div class="col-lg-6 col-md-8 p-1 m-1">
+                        {{ form_errors(formcours.nbrheures)}}
+                        {{ form_widget(formcours.nbrheures,{ 'attr': {'class': 'form-control', 'placeholder' : 'Nbr_heures'}}) }}
+                    </div>
+
+                    <div class="col-lg-6 col-md-8 p-1 m-1">
+                        {{ form_errors(formcours.prix)}}
+                        {{ form_widget(formcours.prix,{ 'attr': {'class': 'form-control', 'placeholder' : 'Prix'}}) }}
+                    </div>
+                <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

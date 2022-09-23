@@ -1,0 +1,182 @@
+.rectangle3
+{
+width:1746px;
+height:99px;
+background-color:#d9d9d9;
+}
+.rectangle1
+{
+width:300px;
+height:800px;
+background-color:#d9d9d9;
+}
+.ellipse1
+{
+width:195px;
+height:198px;
+margin-top: -30%;
+margin-left: 15%;
+}
+.line1
+{
+width:356px;
+border:8px solid #ffffff;
+}
+.espaceetudiant
+{
+text-align:center;
+vertical-align:text-top;
+font-size:32px;
+font-family:Jacques Francois Shadow;
+line-height:auto;
+color:#000000;
+}
+.rectangle5
+{
+width:345px;
+height:61px;
+background-color:#f2eeee;
+}
+.utilisateur-de-profil1
+{
+width:42px;
+height:46px;
+width:42px;
+height:46px;
+left:0px;
+top:149px;
+
+}
+.profil
+{
+text-align:center;
+vertical-align:text-top;
+font-size:28px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.planning1
+{
+width:40px;
+height:42.33333206176758px;
+width:40px;
+height:42.33333206176758px;
+left:0px;
+top:300px;
+
+}
+
+.planning
+{
+text-align:center;
+vertical-align:text-top;
+font-size:28px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.coursformations
+{
+text-align:center;
+vertical-align:text-top;
+font-size:28px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.online-learning1
+{
+width:42px;
+height:39.6363639831543px;
+left:0px;
+top:346px;
+
+}
+
+.chat1
+{
+width:42px;
+height:39px;
+left:0px;
+top:441px;
+
+}
+
+.chatbot
+{
+text-align:center;
+vertical-align:text-top;
+font-size:28px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.historique
+{
+text-align:center;
+vertical-align:text-top;
+font-size:32px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.history1
+{
+width:42px;
+height:30px;
+left:0px;
+top:548px;
+}
+
+.nav-list{
+    padding: 5%;
+}
+
+.line2
+{
+transform:rotate(0deg);
+width:345.0130310058594px;
+border:8px solid #ffffff;
+
+}
+
+.quitter
+{
+text-align:center;
+vertical-align:text-top;
+font-size:32px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+margin-top: -15%;
+}
+
+.leave1
+{
+width:42px;
+height:43px;
+width:42px;
+height:43px;
+left:0px;
+top:779px;
+}
+
+/*a {
+    color: #1b00ff;
+    text-decoration: none;
+    background-color: transparent; }*/
+a:hover {
+    color: #ebe8e8;
+     }
+

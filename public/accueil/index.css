@@ -1,0 +1,252 @@
+.image_accueil{
+position: absolute;
+width: 700px;
+height: 230px;
+border-radius: 30px;
+margin-left: 2%;
+
+}
+
+.rectangle1
+{
+float:left;    
+border-radius:30px;
+width:230px;
+height:570px;
+background-color:#7d7b7b;
+margin-left:4%;
+}
+
+.line
+{
+float:left;    
+transform:rotate(-180deg);
+width:220px;
+border:10px solid #fffcfc;
+margin-left: 0%;
+margin-top:4%;
+}
+
+.nav-item1
+{
+text-align:center;
+font-size:20px;
+font-family:Inter;
+line-height:auto;
+color:#ffffff;
+padding: 30px;
+margin-top: 2%;
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+
+.msg_accueil{
+    margin-left: 30%;
+    margin-top: 16%;
+    color:#686868;
+    font-size:20px;
+    font-family:Inter;
+    line-height:auto;
+}
+.points
+{
+
+margin-left: 15%;
+font-size:60px;
+font-family:Inter;
+
+color:#000000;
+}
+
+.espaceemploye
+{
+text-align:center;
+vertical-align:text-top;
+font-size:16px;
+font-family:Inter;
+line-height:auto;
+color:#ffffff;
+}
+
+.ellipse1
+{
+margin-left: 17%;
+margin-top: 8%;
+width:143px;
+height:150px;
+}
+
+
+
+.fb_noire1
+{
+width:31.65217399597168px;
+height:28px;
+width:31.65217399597168px;
+height:28px;
+left: 7%;
+top:93%;
+position:absolute;
+}
+
+.linkedin_noire1
+{
+width:31px;
+height:28px;
+width:31px;
+height:28px;
+left: 9.5%;
+top:93%;
+position:absolute;
+}
+
+.twitter_noire1
+{
+width:28px;
+height:28px;
+width:28px;
+height:28px;
+left: 12%;
+top:93%;
+position:absolute;
+}
+
+.insta_noire1
+{
+width:30.978723526000977px;
+height:28px;
+width:30.978723526000977px;
+height:28px;
+left: 14.5%;
+top:93%;
+position:absolute;
+}
+
+
+
+.nav-item2{
+    display:inline;
+}
+
+
+
+.ellipse2
+{
+width:53px;
+height:55px;
+left:5px;
+top:21px;
+
+
+}
+
+.ellipse6
+{
+width:53px;
+height:55px;
+left:5px;
+top:21px;
+margin-left: 3%;
+}
+
+.ellipse3
+{
+width:53px;
+height:55px;
+left:5px;
+top:21px;
+margin-left: 3%;
+
+}
+
+.ellipse4
+{
+width:53px;
+height:55px;
+left:5px;
+top:21px;
+margin-left: 3%;
+
+
+}
+
+.ellipse5
+{
+width:53px;
+height:55px;
+left:5px;
+top:21px;
+margin-left: 3%;
+
+}
+
+.nav-icons{
+    margin-left: 17%;
+    margin-top: 2%;
+    
+    
+}
+
+.inscription
+{
+font-size:16px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+
+}
+
+.services
+{
+text-align:left;
+vertical-align:text-top;
+font-size:20px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+}
+
+.actualites
+{
+text-align:left;
+vertical-align:text-top;
+font-size:20px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+}
+
+.histoire
+{
+text-align:left;
+vertical-align:text-top;
+font-size:20px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+}
+
+.contact
+{
+text-align:left;
+vertical-align:text-top;
+font-size:20px;
+font-family:Inter;
+line-height:auto;
+color:#000000;
+}
+
+td{
+   
+    border: 1px;
+    padding: 15px;
+}
+
+.t1{
+    margin-left: 15%;
+}
+
+
