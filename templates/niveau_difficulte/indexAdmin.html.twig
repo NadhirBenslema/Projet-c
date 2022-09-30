@@ -1,0 +1,41 @@
+{% extends 'TemplateFront.html.twig' %}
+
+{% block title %}Tous les niveaux{% endblock %}
+
+{% block body %}
+
+    <div id="div_chart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        {{ gc_draw(piechart, 'div_chart') }}
+    </script>
+    <br>
+    <a class="btn btn-info"  href="{{ path('app_niveau_difficulte_new') }}" >Créer niveau difficulté</a>
+    
+    
+
+    <br>
+    <br>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Niveau</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for nivdif in nivdiff %}
+            <tr>
+                <td>{{ nivdif.id }}</td>
+                <td>{{ nivdif.niveau }}</td>
+                <td>
+                    <a href="/Niveaudifficulte/edit/{{ nivdif.id }}" class="btn btn-warning">Modifier</a>
+                    <a href="/Niveaudifficulte/delete/{{ nivdif.id }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de supprimer ?');">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

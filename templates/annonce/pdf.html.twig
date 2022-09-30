@@ -1,0 +1,62 @@
+
+{% block body %}
+
+
+<h1 style="text-align: center"> Annonce PDF </h1>
+ <img width="100" height="100" src="{{ asset('uploads/images/Capture.png') }}" > 
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 2px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #4c7aaf;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<table id="customers" width="60%" height="120" >
+    <tr>
+
+        <th scope="row">Nom</th>
+        <th scope="row">Description</th>
+      
+
+
+    </tr>
+    <tbody >
+        <tr>
+
+            <td>{{ annonce.nom }}</td>
+            <td>{{ annonce.description }}</td>
+
+        </tr>
+
+
+    </tbody>
+</table>
+
+{% endblock %}
+

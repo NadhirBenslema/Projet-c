@@ -1,0 +1,36 @@
+{% extends 'TemplateFront.html.twig' %}
+
+{% block title %}Toutes les annonces{% endblock %}
+
+{% block body %}
+
+<div>
+    <br>
+    <br>
+    <br>
+</div>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">image</th>
+           
+        </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.nom }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>
+                    <img width="100" height="100" src="{{ asset('uploads/images/') }}{{ annonce.image }}" >
+                </td>
+                
+               
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
